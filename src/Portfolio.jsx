@@ -1,83 +1,58 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function Portfolio() {
   return (
-    <div className="p-6 max-w-5xl mx-auto font-sans space-y-8">
-      <header className="text-center">
-        <h1 className="text-4xl font-bold">Ranjith Katta | UI/UX Designer</h1>
-        <p className="text-gray-600">AL, USA • <a href="mailto:ranjithkatta220@gmail.com" className="text-blue-600 underline">ranjithkatta220@gmail.com</a></p>
-        <p><a href="#" className="text-blue-600 underline">LinkedIn Profile</a></p>
-      </header>
-
-      <section>
-        <h2 className="text-2xl font-semibold">About Me</h2>
-        <p>
-          UI/UX Designer with 3+ years of experience designing and developing responsive web applications using React.js, Angular, and Tailwind CSS. I specialize in building scalable design systems, improving accessibility and performance, and aligning business goals with intuitive user experiences. Passionate about solving complex problems through research-driven design and seamless collaboration with developers.
+    <main className="min-h-screen bg-gray-900 text-white font-sans px-4 scroll-smooth">
+      {/* Hero Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="min-h-screen flex flex-col items-center justify-center text-center"
+      >
+        <h1 className="text-5xl md:text-6xl font-bold mb-4">Hi, I'm Ranjith Katta</h1>
+        <h2 className="text-xl md:text-2xl mb-6 text-gray-400">UI/UX Designer & Frontend Developer</h2>
+        <p className="max-w-xl text-lg text-gray-300 mb-10">
+          I craft responsive and performance-driven digital experiences using React, Tailwind CSS, and Figma. Passionate about user-centered design and clean interfaces.
         </p>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-semibold">Case Studies</h2>
-        <div className="mt-4">
-          <h3 className="text-xl font-semibold">DXC Technology – Enterprise Dashboard Redesign</h3>
-          <p className="italic">UI/UX Designer | Jul 2024 – Present</p>
-          <ul className="list-disc list-inside space-y-1">
-            <li>Redesigned a legacy enterprise dashboard to improve performance, usability, and consistency.</li>
-            <li>Created Figma prototypes and centralized components in Storybook.</li>
-            <li>Used React.js, Tailwind CSS, GraphQL.</li>
-            <li>Impact: 42% faster loads, 28% better task success, Core Web Vitals 62 → 91.</li>
-          </ul>
+        <div className="flex gap-6">
+          <a href="#projects" className="bg-white text-black px-6 py-3 rounded hover:bg-gray-200 transition">See Projects</a>
+          <a href="#contact" className="border border-white px-6 py-3 rounded hover:bg-white hover:text-black transition">Contact Me</a>
         </div>
-        <div className="mt-4">
-          <h3 className="text-xl font-semibold">Hexaware Technologies – B2C Portal</h3>
-          <p className="italic">UI/UX Designer | Jan 2020 – Jul 2022</p>
-          <ul className="list-disc list-inside space-y-1">
-            <li>Built Angular web portal and WordPress themes from XD/Sketch.</li>
-            <li>Implemented Firebase, ran A/B tests and usability sessions.</li>
-            <li>Impact: 47% mobile engagement boost, 22% less drop-off, 98% UI consistency.</li>
-          </ul>
-        </div>
-      </section>
+      </motion.section>
 
-      <section>
-        <h2 className="text-2xl font-semibold">Skills</h2>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <h4 className="font-semibold">Design & Prototyping</h4>
-            <p>Figma, Adobe XD, Sketch, Balsamiq, InVision, Storybook</p>
+      {/* Projects Section */}
+      <section id="projects" className="py-20 max-w-4xl mx-auto">
+        <h3 className="text-3xl font-bold mb-10 text-center">Projects</h3>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-gray-800 p-6 rounded-lg hover:shadow-lg transition">
+            <h4 className="text-xl font-semibold mb-2">DXC Technology Dashboard</h4>
+            <p className="text-gray-400">Enterprise dashboard redesign using React.js, Tailwind, GraphQL & Figma components. Improved load time by 42%.</p>
           </div>
-          <div>
-            <h4 className="font-semibold">Frontend</h4>
-            <p>React.js, Angular, Vue.js, TypeScript, Tailwind CSS, SCSS</p>
-          </div>
-          <div>
-            <h4 className="font-semibold">UX Research</h4>
-            <p>User Interviews, A/B Testing, Journey Mapping</p>
-          </div>
-          <div>
-            <h4 className="font-semibold">APIs & Tools</h4>
-            <p>GraphQL, Axios, Firebase, GitHub, Jira, CI/CD</p>
+          <div className="bg-gray-800 p-6 rounded-lg hover:shadow-lg transition">
+            <h4 className="text-xl font-semibold mb-2">Hexaware Angular Portal</h4>
+            <p className="text-gray-400">Responsive B2C portal using Angular & Firebase. Boosted mobile engagement by 47% and form accuracy by 31%.</p>
           </div>
         </div>
       </section>
 
-      <section>
-        <h2 className="text-2xl font-semibold">Education</h2>
-        <ul className="list-disc list-inside">
-          <li><strong>MS in Data Science</strong>, University of Alabama, Birmingham (2022–2024)</li>
-          <li><strong>B.Tech</strong>, GITAM University, India (2018–2022)</li>
-        </ul>
+      {/* Contact Section */}
+      <section id="contact" className="py-20 text-center">
+        <h3 className="text-3xl font-bold mb-8">Get in Touch</h3>
+        <p className="text-gray-400 mb-6">Interested in working together? Let’s connect!</p>
+        <a
+          href="mailto:ranjithkatta220@gmail.com"
+          className="inline-block bg-blue-600 text-white px-8 py-3 rounded hover:bg-blue-700 transition"
+        >
+          Send Email
+        </a>
       </section>
 
-      <section>
-        <h2 className="text-2xl font-semibold">Contact</h2>
-        <p>Email: <a href="mailto:ranjithkatta220@gmail.com" className="text-blue-600 underline">ranjithkatta220@gmail.com</a></p>
-        <p>LinkedIn: <a href="#" className="text-blue-600 underline">LinkedIn Profile</a></p>
-      </section>
-
-      <footer className="text-center pt-10 text-sm text-gray-500">
-        © {new Date().getFullYear()} Ranjith Katta. All rights reserved.
+      {/* Footer */}
+      <footer className="text-center text-sm text-gray-500 pt-10 pb-4">
+        &copy; {new Date().getFullYear()} Ranjith Katta. All rights reserved.
       </footer>
-    </div>
+    </main>
   );
 }
